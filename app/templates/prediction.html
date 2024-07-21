@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Prediction{% endblock %}
+{% block content %}
+    <h2>Make a Prediction</h2>
+    <form method="POST" action="{{ url_for('predict') }}">
+        <div>
+            <label for="feature1">Feature 1</label>
+            <input type="text" name="feature1">
+        </div>
+        <div>
+            <label for="feature2">Feature 2</label>
+            <input type="text" name="feature2">
+        </div>
+        <!-- Add more features as needed -->
+        <div>
+            <input type="submit" value="Predict">
+        </div>
+    </form>
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+{% endblock %}
